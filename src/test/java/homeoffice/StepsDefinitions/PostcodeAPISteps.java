@@ -121,22 +121,6 @@ public class PostcodeAPISteps {
         }
     }
 
-    @When("I search for nearest postcodes using its coordinates")
-    public void searchNearestPostcodes() {
-        Response lastResponse = (Response) testContext.get("last_response");
-        Float latitude = lastResponse.jsonPath().getFloat("result.latitude");
-        Float longitude = lastResponse.jsonPath().getFloat("result.longitude");
-
-        response = SerenityRest.given()
-                .contentType(ContentType.JSON)
-                .queryParam("lat", latitude)
-                .queryParam("lon", longitude)
-                .queryParam("radius", 1000)
-                .get(BASE_URL);
-
-        testContext.put("nearest_response", response);
-    }
-
     @And("the nearest postcodes should be within {int} meters")
     public void verifyNearestPostcodesDistance(int maxDistance) {
         response.then()
