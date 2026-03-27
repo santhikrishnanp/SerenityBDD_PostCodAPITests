@@ -1,4 +1,4 @@
-package homeoffice.StepsDefinitions;
+package postCode.StepsDefinitions;
 
 import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;

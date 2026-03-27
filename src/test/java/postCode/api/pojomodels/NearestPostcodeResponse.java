@@ -1,4 +1,4 @@
-package homeoffice.api.pojomodels;
+package postCode.api.pojomodels;
 
 import lombok.Data;
 
