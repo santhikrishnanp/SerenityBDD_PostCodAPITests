@@ -1,9 +1,11 @@
+
+![Nightly Build](https://github.com/<your-username>/<your-repo-name>/actions/workflows/serenity-nightly.yml/badge.svg)
 # SerenityBDD Test Automation Framework
 
 ## Overview
 
 This framework implements automated testing for:
-- UI Testing: [Sauce Demo](https://www.saucedemo.com/) e-commerce website using Serenity BDD with Selenium WebDriver
+
 - API Testing: [Postcodes.io](https://api.postcodes.io/docs) service using Serenity BDD with REST Assured
 
 ## Prerequisites
@@ -24,8 +26,6 @@ mvn clean verify
 
 Run specific test types:
 ```bash
-# UI tests only
-mvn clean verify -Dcucumber.filter.tags="@UI"
 
 # API tests only
 mvn clean verify -Dcucumber.filter.tags="@API"
@@ -49,8 +49,7 @@ docker-compose up -d --build
 # All tests
 mvn clean verify -Denvironment=remote
 
-# UI tests only
-mvn clean verify -Denvironment=remote -Dcucumber.filter.tags="@UI"
+
 
 # API tests only
 mvn clean verify -Denvironment=remote -Dcucumber.filter.tags="@API"
@@ -70,7 +69,7 @@ Location: `target/site/serenity/index.html`
 
 ## Test Categories (Tags)
 
-- `@UI`: UI tests for Sauce Demo
+
 - `@API`: API tests for Postcodes.io
 - `@Smoke`: Critical path tests
 - `@Regression`: Full regression suite
